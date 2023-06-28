@@ -1,0 +1,75 @@
+.cardsWrapper {
+  height: 100vh;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.dotsSvg {
+  margin-left: auto;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #52C0F5;
+  border-radius: 10px;
+  width: 450px;
+  min-width: 450px;
+  height: 575px;
+  padding: 1.5rem 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.city {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.weatherTemp {
+  font-size: 144px;
+}
+
+.weatherText {
+  text-align: center;
+}
+
+.cardMain {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2.5rem;
+
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.otherParamsInfoWrapper {
+
+  p {
+    padding-bottom: 1.3rem;
+  }
+}
+
+.cardInner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

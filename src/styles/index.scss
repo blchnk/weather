@@ -1,0 +1,101 @@
+@import "weatherIconsAnimation";
+
+html {
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 30px;
+}
+
+::selection {
+  color: #ffffff; /* Цвет текста */
+  background: #00ab84; /* Цвет фона */
+}
+
+h1{
+  font-weight: 400;
+  line-height: 145px;
+  font-size: 80px;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+h3{
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+ul{
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+button{
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+img{
+  display: block;
+}
+
+input{
+
+  &:focus {
+    outline: 2.5px solid #00AA83;
+  }
+}
+
+input[type="text"] {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+label{
+  vertical-align: text-bottom;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
