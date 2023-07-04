@@ -4,13 +4,32 @@ import ReactCardCarousel from "react-card-carousel";
 import s from "./Carousel.module.scss";
 import {TCards} from "../types/types";
 import dots from "../assets/Vector.svg";
+import {useEffect, useState} from "react";
+import {useSwipeable} from "react-swipeable";
 
 const Carousel = ({cards, currentDate}: { cards: TCards[], currentDate: string }) => {
+    const handlers = useSwipeable({
+        onSwiped: (eventData) => console.log("User Swiped!", eventData),
+        delta: { up: 20, down: 20 },
+        preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
+        trackTouch: true,                      // track touch input
+        trackMouse: false,                     // track mouse input
+        rotationAngle: 0,                      // set a rotation angle
+        swipeDuration: 250,               // allowable duration of a swipe (ms). *See Notes*
+        touchEventOptions: { passive: true },
+    });
+
+    const [alignment, setAlignment] = useState<string>('horizontal')
+
+    useEffect(() => {
+        if (window.innerWidth < 500) setAlignment('vertical')
+        if (window.innerWidth > 500) setAlignment('horizontal')
+    }, [window.innerWidth])
 
     return (
         <>
-            <div className={[s.cardsWrapper, 'no-select'].join(' ')}>
-                <ReactCardCarousel spread={'medium'} autoplay={false} autoplay_speed={2500}>
+            <div {...handlers} className={[s.cardsWrapper, 'no-select'].join(' ')}>
+                <ReactCardCarousel spread={'wide'} autoplay={false} autoplay_speed={2500} alignment={alignment} >
                     {cards.map((item: TCards, key: number) =>
                         <div className={s.card} key={key}>
                             <img className={s.dotsSvg} src={dots} alt="dots"/>

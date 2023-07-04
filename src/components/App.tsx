@@ -33,7 +33,7 @@ function App() {
         if (cards.length > 2) setLoading(false)
     }, [cards])
 
-    const fetchWeatherData = (city: string) => {
+    const fetchWeatherData = (city: string): Promise<TWeatherApiResponse> => {
         return (fetch(`${url}?q=${city}&units=metric&APPID=${key}`)
             .then(response => response.json()))
     }
@@ -82,10 +82,12 @@ function App() {
     return (
         <>
             <div className={s.background} style={{backgroundImage: `url(${backgroundImg})`}}>
-                {
-                    loading ? <div className={s.loadingAnimation}></div> :
-                        <Carousel cards={cards} currentDate={currentDate}/>
-                }
+                <div className={'container'}>
+                    {
+                        loading ? <div className={s.loadingAnimation}></div> :
+                            <Carousel cards={cards} currentDate={currentDate}/>
+                    }
+                </div>
             </div>
         </>
     )
